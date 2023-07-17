@@ -1,23 +1,15 @@
+import styled from "styled-components"
 import Container from "./Componentes/Container"
-
 
 export default function App() {
 
   return (
-    <div>
+    <SCApp>
       <Container/>
-      app
-    </div>
+    </SCApp>
   )
 }
 
- 
-
-
-// Criar dados fakes 
-
-//
-
-//  
-
-//
+const SCApp = styled.div`
+  font-family: 'Recursive', sans-serif;
+`;
