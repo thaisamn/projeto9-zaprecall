@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-export default function Flashcard() {
+export default function Flashcard({card, numero}) {
 
     return (
       <SCFlashCard>
-        <span>Pergunta 1</span>
+        <span>Pergunta {numero}</span>
         <img src="assets/img/seta_play.png" alt="play" srcset="" />
       </SCFlashCard>
     )
