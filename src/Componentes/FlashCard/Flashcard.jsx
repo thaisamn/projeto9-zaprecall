@@ -54,8 +54,8 @@ export default function Flashcard({ card, index, responder}) {
     <div seletor data-test="flashcard" >
       {!clicado  && (
         <SCFlashCard clicado={card.status} color={tratarResposta(card.status).color} >
-          <p seletor data-test="flashcard-text">Pergunta {index + 1}</p>
-          <img  data-test="play-btn" onClick={() => !card.status && setClicado(!clicado)} src={`../../public/assets/img/${tratarResposta(card.status).icon}.png`} alt="" srcset="" />
+          <p seletor data-test="flashcard-text">Pergunta {index + 1}</p> 
+          <img  data-test="play-btn" onClick={() => !card.status && setClicado(!clicado)} src={`assets/img/${tratarResposta(card.status).icon}.png`} alt="" srcset="" />
         </SCFlashCard>
       )}
       {clicado && (
@@ -67,7 +67,7 @@ export default function Flashcard({ card, index, responder}) {
                 <img
                   onClick={() => setVirado(!virado)}
                   data-test="turn-btn"
-                  src="../../public/assets/img/seta_virar.png"
+                  src="assets/img/seta_virar.png"
                   alt=""
                   srcset=""
                 />
