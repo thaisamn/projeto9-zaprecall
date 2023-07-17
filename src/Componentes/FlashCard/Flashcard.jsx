@@ -77,11 +77,11 @@ export default function Flashcard({ card, index, responder}) {
             <SCOpenVerseFlashCard>
               <p seletor data-test="flashcard-text">{card.answer}</p>
               <div>
-                <SCFlashCardButton onClick={_ => responderFlashCard('errou', index)} color={RED}>Não lembrei</SCFlashCardButton>
-                <SCFlashCardButton onClick={_ => responderFlashCard('quase', index)} color={YELLOW}>
+                <SCFlashCardButton data-test="no-btn" onClick={_ => responderFlashCard('errou', index)} color={RED}>Não lembrei</SCFlashCardButton>
+                <SCFlashCardButton  data-test="partial-btn" onClick={_ => responderFlashCard('quase', index)} color={YELLOW}>
                   Quase não lembrei
                 </SCFlashCardButton>
-                <SCFlashCardButton onClick={_ => responderFlashCard('acertou', index)} color={GREEN}>Zap!</SCFlashCardButton>
+                <SCFlashCardButton  data-test="zap-btn" onClick={_ => responderFlashCard('acertou', index)} color={GREEN}>Zap!</SCFlashCardButton>
               </div>
             </SCOpenVerseFlashCard>
           )}
