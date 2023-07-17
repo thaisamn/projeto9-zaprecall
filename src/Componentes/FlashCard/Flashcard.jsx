@@ -51,20 +51,22 @@ export default function Flashcard({ card, index, responder}) {
   }
   
   return (
-    <>
+    <div seletor data-test="flashcard" >
       {!clicado  && (
-        <SCFlashCard clicado={card.status} color={tratarResposta(card.status).color} onClick={() => setClicado(!clicado)}>
-          <p>Pergunta {index + 1}</p>
-          <img src={`../../public/assets/img/${tratarResposta(card.status).icon}.png`} alt="" srcset="" />
+        <SCFlashCard clicado={card.status} color={tratarResposta(card.status).color} >
+          <p seletor data-test="flashcard-text">Pergunta {index + 1}</p>
+          <img  data-test="play-btn" onClick={() => !card.status && setClicado(!clicado)} src={`../../public/assets/img/${tratarResposta(card.status).icon}.png`} alt="" srcset="" />
         </SCFlashCard>
       )}
       {clicado && (
         <>
           {!virado ? (
             <SCOpenFlashCard>
-              <p>{card.question}</p>
-              <div onClick={() => setVirado(!virado)}>
+              <p seletor data-test="flashcard-text">{card.question}</p>
+              <div >
                 <img
+                  onClick={() => setVirado(!virado)}
+                  data-test="turn-btn"
                   src="../../public/assets/img/seta_virar.png"
                   alt=""
                   srcset=""
@@ -73,7 +75,7 @@ export default function Flashcard({ card, index, responder}) {
             </SCOpenFlashCard>
           ) : (
             <SCOpenVerseFlashCard>
-              <p>{card.answer}</p>
+              <p seletor data-test="flashcard-text">{card.answer}</p>
               <div>
                 <SCFlashCardButton onClick={_ => responderFlashCard('errou', index)} color={RED}>Não lembrei</SCFlashCardButton>
                 <SCFlashCardButton onClick={_ => responderFlashCard('quase', index)} color={YELLOW}>
@@ -85,6 +87,6 @@ export default function Flashcard({ card, index, responder}) {
           )}
         </>
       )}
-    </>
+    </div>
   );
 }

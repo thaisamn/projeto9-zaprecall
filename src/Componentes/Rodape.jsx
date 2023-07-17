@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function Rodape({cards}) {
 
     return (
-      <SCRodape>
+      <SCRodape data-test="footer"> 
       {cards.filter(card => card.status).length || 0}/{cards.length || 0} CONCLUÍDOS
       </SCRodape>
     )

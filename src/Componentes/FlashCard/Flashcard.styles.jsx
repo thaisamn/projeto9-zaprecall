@@ -71,7 +71,6 @@ export const SCFlashCard = styled.div`
   align-items: center;
   padding: 0px 12px;
   margin-top: 24px;
-  cursor: pointer;
 
   p {
     font-size: 16px;
@@ -83,5 +82,7 @@ export const SCFlashCard = styled.div`
   img {
     width: 20px;
     height: 23px;
+  cursor: pointer;
+
   }
 `;
