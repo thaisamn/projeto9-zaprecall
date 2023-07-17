@@ -1,9 +1,14 @@
-import Flashcard from "./Flashcard";
-import { cards } from "../dados";
-export default function Corpo() {
+import styled from "styled-components";
+import Flashcard from "./FlashCard/Flashcard";
+export default function Corpo({cards, responder}) {
   return (
-    <div>
-      {cards.map((card, index) =>  <Flashcard key={index} card={card} numero={index + 1}/>)}
-    </div>
+    <SCCorpo>
+      {cards.map((card, index) =>  <Flashcard key={index} card={card} index={index} responder={responder}/>)}
+    </SCCorpo>
   );
 }
+
+
+const SCCorpo = styled.div`
+  margin-bottom:  100px;
+`;
